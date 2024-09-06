@@ -1,0 +1,789 @@
+:root {
+  --bgcolor: #3b3b3b;
+  --textcolor: #c0c0c0;
+  --primarycolor: #212121;
+  --thirdcolor: rgb(199, 199, 0);
+  --secondarycolor: #222222;
+  --headersize: 1.563em;
+  --subheader: 1.25em;
+  --textsize: 1.125em;
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (max-width: 1920px) {
+  body {
+    font-family: "Poppins", sans-serif;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(
+      to bottom,
+      #000000,
+      #212121,
+      #212121,
+      #212121,
+      #212121,
+      #212121
+    );
+  }
+
+  nav {
+    color: white;
+    text-align: flex-start;
+    padding: 0.938em;
+    border-bottom: 1px solid #171717;
+    background-color: rgba(3, 3, 3, 0.5);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 1;
+    display: flex; /* Menggunakan flexbox */
+    justify-content: space-between; /* Menempatkan elemen di tengah horizontal */
+    align-items: center;
+  }
+  .fa-solid{
+    font-size: var(--subheader);
+  }
+  nav h1 {
+    margin: 0 1.25em;
+    animation: fadeinleft 1s ease forwards;
+  }
+  .nav-list li a.aabout {
+    white-space: nowrap; /* Menjadikan teks dalam satu baris */
+  }
+  .nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    padding-right: 3.125em;
+    text-align: center;
+  }
+  .nav-list li {
+    display: inline;
+    margin: 0.625em;
+    font-size: var(--textsize);
+    animation: fadeinbottom 1.5s ease forwards;
+  }
+  .nav-list li a {
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    color: white;
+    transition: 0.5s;
+  }
+  .nav-list li a:hover {
+    font-size: 1.188em;
+    color: #fffb00;
+  }
+  h2 {
+    color: var(--thirdcolor);
+    font-size: var(--headersize);
+  }
+  .profilestatus {
+    color: white;
+    font-size: var(--textsize);
+    margin-bottom: 5em;
+    opacity: 0;
+    margin-top: -1.25em;
+    animation: fromtop 1s ease forwards;
+    animation-delay: 0.2s;
+  }
+  .container {
+    max-width: inherit;
+    border-radius: 5px;
+    margin-top: 1.25em;
+  }
+  .profile-img {
+    max-width: 12.5em;
+    height: 11.25em;
+    transform: scale(1);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgb(29, 29, 28);
+    animation: scaleupfade 0.8s ease forwards;
+    transition: 1.5s;
+    border-style: solid;
+    border-color: orange;
+    padding: 0.125em;
+    border-width: 0.125em;
+  }
+  .profile {
+    background-image: url(img/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    padding-top: 6.25em;
+    /* background-color: var(--bgcolor); */
+  }
+  .profile-img:hover {
+    border-width: 4px;
+    padding: 4px;
+    box-shadow: 0 0 30px rgb(255, 217, 0);
+    max-width: 15.625em;
+    height: 13.75em;
+  }
+  .aboutme {
+    padding: 6.25em;
+    background-color: var(--secondarycolor);
+  }
+  .about {
+    color: rgb(199, 199, 0);
+    text-align: center;
+    padding-top: 0.625em;
+    transition: 1s;
+  }
+  .profile-description:hover {
+    font-size: 1.188em;
+    padding-left: 1.375em;
+    padding-right: 1.375em;
+    color: white;
+  }
+  .hidden {
+    opacity: 0;
+  }
+  .show {
+    opacity: 1;
+  }
+  .about:hover {
+    transform: scale(1.2);
+  }
+  .pp p:hover {
+    font-size: 1.188em;
+    padding-left: 4.375em;
+    padding-right: 4.375em;
+    color: white;
+  }
+  .ph:hover {
+    scale: 1.2;
+  }
+  .profile-name {
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    animation: fromtop 1s ease forwards;
+  }
+  .space {
+    padding-right: 0.438em;
+  }
+  .profile-name li {
+    font-size: var(--headersize);
+    font-weight: bold;
+    letter-spacing: 0.125em;
+    list-style: none;
+    color: white;
+    text-shadow: 0 0 7px var(--thirdcolor), 0 0 50px orange;
+    animation: glow 3s infinite backwards;
+    animation-timing-function: ease;
+  }
+  @keyframes glow {
+    0% {
+      text-shadow: none;
+    }
+    30% {
+      text-shadow: 0 0 7px var(--thirdcolor), 0 0 50px orange;
+    }
+    50% {
+      text-shadow: 0 0 7px var(--thirdcolor), 0 0 50px orange;
+    }
+    70% {
+      text-shadow: 0 0 7px var(--thirdcolor), 0 0 50px orange;
+    }
+    100% {
+      text-shadow: none;
+    }
+  }
+  .profile-name li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .profile-name li:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .profile-name li:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .profile-name li:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  .profile-name li:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  .profile-name li:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+  .profile-name li:nth-child(7) {
+    animation-delay: 0.7s;
+  }
+  .profile-name li:nth-child(8) {
+    animation-delay: 0.8s;
+  }
+  .profile-name li:nth-child(9) {
+    animation-delay: 0.9s;
+  }
+  .profile-name li:nth-child(10) {
+    animation-delay: 1s;
+  }
+  .profile-name li:nth-child(11) {
+    animation-delay: 1.1s;
+  }
+  .profile-name li:nth-child(12) {
+    animation-delay: 1.2s;
+  }
+  .profile-name li:nth-child(13) {
+    animation-delay: 1.3s;
+  }
+  .profile-name li:nth-child(14) {
+    animation-delay: 1.4s;
+  }
+  .profile-name li:nth-child(15) {
+    animation-delay: 1.5s;
+  }
+  .profile-name li:nth-child(16) {
+    animation-delay: 1.6s;
+  }
+  .profile-name li:nth-child(17) {
+    animation-delay: 1.7s;
+  }
+  .pp {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    float: center;
+  }
+  .pp p {
+    font-size: 1.125em;
+    margin-top: -1.25em;
+    padding-bottom: 6.25em;
+    padding-left: 6.25em;
+    padding-right: 6.25em;
+    text-align: center;
+    word-spacing: 0.063em;
+    letter-spacing: 0.063em;
+    color: var(--textcolor);
+    transition: 1s;
+    opacity: 0;
+    animation: fromtop 1s ease forwards;
+    animation-delay: 0.6s;
+  }
+  .ph {
+    font-size: var(--headersize);
+    color: var(--thirdcolor);
+    transition: 1s;
+    padding: 0.625em;
+    opacity: 0;
+    animation: fromtop 1s ease forwards;
+    animation-delay: 0.5s;
+  }
+
+  .profile-description {
+    font-size: 1.125em;
+    text-align: center;
+    padding-top: 0px;
+    padding-left: 3.125;
+    padding-right: 3.125;
+    color: var(--textcolor);
+    transition: 1s;
+  }
+  .experiencediv {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.625em;
+    padding-bottom: 6.25em;
+  }
+  .experience {
+    margin-bottom: 1.25em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .experience img {
+    max-width: 100%;
+  }
+  h3,
+  .experience p,
+  .experience {
+    color: var(--textcolor);
+    font-size: var(--textsize);
+  }
+
+  p {
+    color: #333333;
+  }
+  .experience p {
+    margin-top: 1.25em;
+    max-width: 25em;
+  }
+  /* .htmlimg,
+  .cssimg,
+  .luaimg,
+  .csharpimg {
+    transition: 1s;
+  } */
+  .experience img {
+    width: 12.5em;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.5));
+    transition: transform 0.3s ease, filter 0.3s ease; /* Animasi saat membesar dan perubahan filter */
+  }
+
+  .experience img:hover {
+    transform: scale(1.1); /* Membesarkan gambar saat kursor masuk */
+    filter: drop-shadow(
+      0 0 30px rgba(255, 0, 0, 0.7)
+    ); /* Mengubah filter dan perbesaran saat kursor masuk */
+  }
+
+  .experience img:not(:hover) {
+    transform: scale(1); /* Mengembalikan ukuran gambar saat kursor keluar */
+    /* Mengaktifkan efek grayscale saat kursor keluar */
+  }
+  .experience img:hover + p {
+    color: white;
+    transition: color 1s;
+  }
+  .experience img:not(:hover) + p {
+    transition: 1s;
+  }
+  h4 {
+    color: white;
+    font-size: var(--subheader);
+  }
+  h3 {
+    color: var(--thirdcolor);
+    text-align: center;
+    padding-top: 6.25em;
+    font-size: var(--headersize);
+    transition: 0.5s;
+  }
+  .projectdiv {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding-left: 12.5em;
+    padding-right: 12.5em;
+    padding-top: 3.125em;
+  }
+  h6 {
+    font-size: var(--subheader);
+    color: white;
+    margin-top: -0.313em;
+  }
+  .projecth {
+    color: var(--thirdcolor);
+    padding-top: 6.25em;
+    font-size: var(--headersize);
+    font-weight: bold;
+    text-align: center;
+    transition: 0.5s;
+  }
+  .projectdiv p {
+    color: var(--textcolor);
+  }
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    background-color: rgb(44, 44, 44);
+    width: 18.75em;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Efek bayangan */
+    border-radius: 8px;
+    padding: 1.25em;
+    text-align: center;
+    margin-bottom: 3.125em;
+    transition: 0.5s;
+  }
+  .projectdiv div:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  }
+  .contact {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .message {
+    height: 12.5em;
+    margin-bottom: 1.25em;
+  }
+  textarea {
+    width: 37.5em; /* Atur lebar textarea sesuai kebutuhan */
+    padding: 0.625em;
+    margin: 0.625em;
+    border-radius: 5px;
+    resize: none;
+    background-color: rgb(68, 68, 68);
+    box-shadow: 0 0 20px 1px rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  textarea::placeholder {
+    color: white;
+  }
+  .rounded-button {
+    margin-bottom: 6.25em;
+    font-family: "Poppins", sans-serif;
+    padding: 10px 20px; /* Atur padding sesuai kebutuhan Anda */
+    border: none; /* Menghapus border default */
+    border-radius: 10px; /* Menambahkan border radius */
+    background-color: rgb(88, 88, 88); /* Warna latar belakang tombol */
+    color: #fff; /* Warna teks tombol */
+    cursor: pointer; /* Mengubah kursor menjadi tangan saat dihover */
+    transition: background-color 0.5s ease; /* Efek transisi saat hover */
+  }
+
+  .rounded-button:hover {
+    background-color: var(--thirdcolor);
+    color: rgb(27, 27, 27); /* Warna latar belakang saat tombol dihover */
+  }
+  .contact p {
+    color: var(--textcolor);
+    font-size: var(--textsize);
+    margin-bottom: -10px;
+  }
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #454545 #9d9d9d;
+  }
+
+  /* Chrome, Edge and Safari */
+  *::-webkit-scrollbar {
+    height: 11px;
+    width: 11px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 1px;
+    background-color: #9d9d9d;
+  }
+
+  *::-webkit-scrollbar-track:hover {
+    background-color: #9d9d9d;
+  }
+
+  *::-webkit-scrollbar-track:active {
+    background-color: #9d9d9d;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #454545;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #414141;
+  }
+
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #383838;
+  }
+  .footer {
+    background-color: rgba(3, 3, 3, 0.5);
+    padding: 0.938em;
+    text-align: center;
+  }
+
+  .footer-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer a {
+    margin: 0 0.625em;
+    text-decoration: none;
+  }
+
+  .footer img {
+    max-width: 1.875em;
+    padding: 0.438em;
+    transition: 0.5s;
+    border-radius: 40%;
+  }
+  .footer img:hover {
+    transform: scale(1.1);
+  }
+  .github:hover {
+    filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+  }
+  .discord:hover {
+    filter: drop-shadow(0 0 10px rgb(92, 92, 255));
+  }
+  .instagram:hover {
+    filter: drop-shadow(0 0 10px rgb(208, 0, 255));
+  }
+  h3:hover,
+  .projecth:hover {
+    transform: scale(1.2);
+  }
+  @keyframes fadeinleft {
+    0% {
+      transform: translateX(-6.25em);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeinright {
+    0% {
+      transform: translateX(6.25em);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeinbottom {
+    0% {
+      transform: translateY(6.25em);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes scaleupfade {
+    0% {
+      transform: scale(1);
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes fromtop {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  @keyframes frombottom {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  .hidden {
+    opacity: 0;
+    transition: all 2s;
+  }
+  .show {
+    opacity: 1;
+    filter: none;
+  }
+
+  .checkbtn {
+    font-size: var(--textsize);
+    color: white;
+    float: right;
+    cursor: pointer;
+    display: none;
+  }
+  #check {
+    display: none;
+  }
+}
+@media (max-width: 1280px) {
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    background-color: rgb(44, 44, 44);
+    width: 18.75em;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Efek bayangan */
+    border-radius: 8px;
+    padding: 1.25em;
+    margin: 1.25em;
+    text-align: center;
+    margin-bottom: 3.125em;
+    transition: 0.5s;
+  }
+  .projectdiv {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+  }
+  .experience p {
+    font-size: 0.9em;
+    margin-top: 1.25em;
+    max-width: 12.5em;
+    overflow: hidden;
+  }
+  body::-webkit-scrollbar {
+    width: 0.7em;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 10px;
+  }
+  body::-webkit-scrollbar {
+    width: 0.7em;
+  }
+}
+@media (max-width: 640px) {
+  body {
+    font-size: 9px;
+  }
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    background-color: rgb(44, 44, 44);
+    width: 18.75em;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Efek bayangan */
+    border-radius: 8px;
+    padding: 2.25em;
+    margin: 1.25em;
+    text-align: center;
+    margin-bottom: 3.125em;
+    transition: 0.5s;
+  }
+  .projectdiv {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+  }
+  .experience p {
+    font-size: 0.9em;
+    margin-top: 1.25em;
+    max-width: 12.5em;
+    overflow: hidden;
+  }
+  body::-webkit-scrollbar {
+    width: 0.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  nav h1 {
+    margin: 0 1.7em;
+    animation: fadeinright 1s ease forwards;
+  }
+  .profile {
+    background-image: url(img/bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    padding-top: 6.25em;
+    background-size: cover;
+    width: 100%; /* Sesuaikan dengan lebar yang Anda inginkan */
+    padding-bottom: 50%; /* Ini akan membuat rasio 1:1 */
+    /* background-color: var(--bgcolor); */
+  }
+  body {
+    font-size: 9px;
+  }
+  .checkbtn {
+    display: block;
+  }
+  #check {
+    display: none;
+  }
+  .navpc {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 30%;
+    height: 100vh;
+    background-color: rgba(3, 3, 3, 0.5);
+    top: 37px;
+    left: -150%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    padding-left: 10px;
+    padding-right: 100%;
+    line-height: 30px;
+    border: 2px solid rgb(69, 69, 69);
+    border-radius: 10px;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+
+  .project1,
+  .project2,
+  .project3,
+  .project4 {
+    background-color: rgb(44, 44, 44);
+    width: 18.75em;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Efek bayangan */
+    border-radius: 8px;
+    padding: 2.5em;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 3.125em;
+    transition: 0.5s;
+  }
+  .projectdiv {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    text-align: center; /* Untuk horizontal centering */
+    justify-items: center; /* Opsional, untuk horizontal centering */
+    align-items: center; /* Untuk vertical centering */
+  }
+  .experience p {
+    font-size: 0.9em;
+    margin-top: 1.25em;
+    max-width: 12.5em;
+    overflow: hidden;
+  }
+  textarea {
+    width: 22em; /* Atur lebar textarea sesuai kebutuhan */
+    padding: 0.625em;
+    margin: 0.625em;
+    border-radius: 5px;
+    resize: none;
+    background-color: rgb(68, 68, 68);
+    box-shadow: 0 0 20px 1px rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  body::-webkit-scrollbar {
+    width: 0em;
+  }
+  .contact p {
+    font-size: var(--subheader);
+  }
+}
